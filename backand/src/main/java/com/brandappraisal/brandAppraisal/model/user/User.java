@@ -1,6 +1,7 @@
-package com.brandappraisal.brandAppraisal.model;
+package com.brandappraisal.brandAppraisal.model.user;
 
 
+import com.brandappraisal.brandAppraisal.model.Role;
 import com.brandappraisal.brandAppraisal.util.EntityIdentify;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +26,14 @@ public class User  extends EntityIdentify{
 	@Column
 	private String firstName;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@Column String email;
+
+	@Column
+	private String password;
+
+	@Column
+	private Boolean enabled;
+
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Role role;
 }

@@ -1,6 +1,6 @@
 package com.brandappraisal.brandAppraisal.service;
 
-import com.brandappraisal.brandAppraisal.model.User;
+import com.brandappraisal.brandAppraisal.model.user.User;
 import com.brandappraisal.brandAppraisal.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

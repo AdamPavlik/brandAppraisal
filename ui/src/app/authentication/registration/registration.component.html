@@ -1,0 +1,22 @@
+<form class="example-form" [formGroup]="registrationForm" (submit)="signUpSubmit()">
+  <mat-form-field class="full-width">
+    <input matInput placeholder="First Name" formControlName="firstName">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Last Name" formControlName="lastName">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Email" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Passwod" formControlName="password">
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button color="primary">Sign Up</button>
+  </div>
+
+</form>

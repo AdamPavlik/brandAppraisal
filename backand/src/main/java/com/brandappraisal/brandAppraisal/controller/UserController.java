@@ -19,16 +19,17 @@ public class UserController {
 
 	private UserService userService;
 
-	@GetMapping("/user")
+	@GetMapping("/")
 	public ResponseEntity<UserDto> getUser() {
 		return ResponseEntity.ok(new UserDto(userService.getUserById(1)));
 	}
 
-
-	@GetMapping("/user/me")
-	public Principal user(Principal principal) {
-		return principal;
+	@GetMapping("/public")
+	public ResponseEntity<UserDto> getPublicUser() {
+		return ResponseEntity.ok(new UserDto(userService.getUserById(1)));
 	}
+
+
 
 
 }

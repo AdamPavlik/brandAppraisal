@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LayoutService, User } from '../service/LayoutService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'layout',
@@ -10,10 +11,18 @@ export class LayoutComponent implements OnInit {
 
   user: User;
 
-  constructor(private layoutService: LayoutService) { }
+  constructor(private layoutService: LayoutService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.layoutService.getUser().subscribe(u => this.user = u);
+  }
+
+  login() {
+    this.router.navigateByUrl("/login")
+  }
+
+  registration() {
+    this.router.navigateByUrl("/registration")
   }
 
 }

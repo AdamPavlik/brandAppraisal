@@ -9,8 +9,8 @@ export class LayoutService {
 
   }
 
-  getUser(): Observable<User>{
-    return this.http.get('/user');
+  getUser(): Observable<any>{
+    return this.http.get('/');
   }
 
 }

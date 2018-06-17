@@ -1,6 +1,6 @@
 package com.brandappraisal.brandAppraisal.dto.user;
 
-import com.brandappraisal.brandAppraisal.model.User;
+import com.brandappraisal.brandAppraisal.model.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

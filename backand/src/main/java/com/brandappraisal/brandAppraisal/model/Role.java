@@ -1,5 +1,6 @@
 package com.brandappraisal.brandAppraisal.model;
 
+import com.brandappraisal.brandAppraisal.model.user.User;
 import com.brandappraisal.brandAppraisal.util.EntityIdentify;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
