@@ -3,13 +3,13 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.brand-appraisal</groupId>
-	<artifactId>brandAppraisal</artifactId>
+	<groupId>com.marketSS</groupId>
+	<artifactId>marketSS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>brandAppraisal</name>
-	<description>Demo project for Spring Boot</description>
+	<name>market</name>
+	<description>Market</description>
 
 
 	<properties>
@@ -191,38 +191,11 @@
 			<artifactId>jackson-dataformat-csv</artifactId>
 		</dependency>
 
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.9.5</version>
-			<scope>test</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.dbunit</groupId>
-			<artifactId>dbunit</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>ru.yandex.qatools.embed</groupId>
-			<artifactId>postgresql-embedded</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.github.springtestdbunit/spring-test-dbunit -->
-		<dependency>
-			<groupId>com.github.springtestdbunit</groupId>
-			<artifactId>spring-test-dbunit</artifactId>
 			<scope>test</scope>
 		</dependency>
 
@@ -236,16 +209,6 @@
 			<artifactId>freemarker</artifactId>
 		</dependency>
 	</dependencies>
-
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 
 </project>

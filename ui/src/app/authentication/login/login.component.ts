@@ -4,6 +4,7 @@ import { AuthService } from '../../auth/AuthService';
 import { LocalStorageService } from '../../commons/localStorage';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
+import { NotificationService } from '../../layout/notifications/NotificationService';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private auth: AuthService,
               private storage: LocalStorageService,
-              private router: Router) {
+              private router: Router,
+              private notifications: NotificationService) {
     this.createForm(fb);
   }
 
@@ -29,7 +31,9 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.loginForm.get("login").value, this.loginForm.get("password").value)
         .subscribe(sub => {
           this.storage.save(environment.TOKEN_NAME, sub.access_token);
-          this.router.navigateByUrl('/')
+          window.location.href = '/';
+        }, error => {
+          this.notifications.error(error, 'Login error')
         })
   }
 

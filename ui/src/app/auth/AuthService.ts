@@ -3,11 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operator/map';
 import { environment } from '../../environments/environment';
+import { LocalStorageService } from '../commons/localStorage';
 
 @Injectable()
 export class AuthService {
 
   constructor(private http: HttpClient,
+              private storage: LocalStorageService
   ) {
 
   }
@@ -28,13 +30,19 @@ export class AuthService {
     return this.http.get<TokenAvailable>(url,{headers: headers});
   }
 
-  registration(){
+  registration(user: User): Observable<User>{
+    let url = '/public/registration';
+    return this.http.post<User>(url, user);
+  }
+
+  logout(){
+    this.storage.remove(environment.TOKEN_NAME);
+    window.location.href = '/';
   }
 
 }
 
 export interface TokenAvailable{
-
   exp: number;
   user_name: string;
   authorities: Array<string>,
@@ -48,4 +56,13 @@ export interface Token {
   token_type: string;
   expires_in: number;
   scope: string
+}
+
+export interface User {
+  id: string
+  firstName: string,
+  secondName: string,
+  phoneNumber: string,
+  email: string,
+  password: string
 }

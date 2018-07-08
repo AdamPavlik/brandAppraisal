@@ -7,12 +7,12 @@ export class LocalStorageService {
 
   }
 
-  save(key: string, value: string): void {
-    localStorage.setItem(key, value);
+  save(key: string, value: any): void {
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
-  get(key: string): string {
-    return localStorage.getItem(key);
+  get(key: string): any {
+    return JSON.parse(localStorage.getItem(key));
   }
 
   remove(key: string): void {

@@ -13,39 +13,53 @@ import { LocalStorageService } from './commons/localStorage';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { APIInterceptor } from './http/HttpInterceptor';
 import { LayoutModule } from './layout/LayoutModule';
+import { CurrentUserService } from './auth/CurrentUserService';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthCanActivate } from './auth/guardServices/AuthCanActivate';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+import { AuthNotAuthenticationGuard } from './auth/guardServices/AuthNotAuthenticationGuard';
 
 let routes: Routes = [
   {
     path: '', pathMatch: 'full', component: DashboardComponent
   },
   {
-    path: 'login', pathMatch: 'full', component: LoginComponent
+    path: 'login', pathMatch: 'full', component: LoginComponent, canActivate: [AuthNotAuthenticationGuard]
   },
   {
-    path: 'registration', pathMatch: 'full', component: RegistrationComponent
-  }
+    path: 'registration', pathMatch: 'full', component: RegistrationComponent, canActivate: [AuthNotAuthenticationGuard]
+  },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
+    FlexLayoutModule,
     HttpClientModule,
     LayoutModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     AuthenticationModule,
+    SnotifyModule,
     RouterModule.forRoot(routes)
+  ],
+  exports: [
   ],
   providers: [HttpClientModule, {
     provide: HTTP_INTERCEPTORS,
     useClass: APIInterceptor,
     multi: true },
+    CurrentUserService,
     LocalStorageService,
-    AuthService],
+    AuthService,
+    AuthCanActivate,
+    AuthNotAuthenticationGuard,
+    { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+    SnotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

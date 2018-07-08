@@ -4,6 +4,7 @@ import { MaterialModule } from '../commons/matereal/materialModule';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginService } from './login/service/loginService';
+import { AuthService } from '../auth/AuthService';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { LoginService } from './login/service/loginService';
     MaterialModule,
     RouterModule
   ],
-  providers: [LoginService]
+  providers: [LoginService, AuthService]
 })
 export class AuthenticationModule {
 }

@@ -7,8 +7,9 @@ export const environment = {
     production          : false,
     API_URL             : 'http://localhost:8080/api',
     NO_AUTH_PREFIX      : 'http://localhost:8080/api/public',
+    LOGIN_PAGE          : '/login',
     OAUTH2_BASIC        : 'Basic YWRtaW46YWRtaW4=',
-    TOKEN_NAME          : 'izio_security_token',
+    TOKEN_NAME          : 'market_security_token',
     hostName            : 'localhost:4200',
-    public_payment_token: 'pk_test_wmEHDSlU3PhZwrQrBrFMytoI'
+    current_user_key    : 'currentUser'
 };

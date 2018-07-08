@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,13 +10,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
   ],
   exports: [
+    MatCardModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
@@ -29,8 +30,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule
   ],
   imports: [
+    MatCardModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
